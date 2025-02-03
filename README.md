@@ -4,6 +4,7 @@
   After the action, the namespace stays with a "Terminating" status on the RedHat OpenShift console and doesn't go away.
   
   ![image](https://github.com/user-attachments/assets/3f75600d-77df-4485-85e8-8f33a9808a62)
+  ![screenshot](images/namespace_in_terminating_state.png)
 
   Here are the steps you can take to manually delete the terminated namespace. 
   
