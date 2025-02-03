@@ -1,6 +1,9 @@
 # OpenShift---Deleting-namespace-stuck-in-Terminating-state
 <pre>
   You are deleting a namespace from the OpenShift Console using the Options menu at the far right side of the project listing, selecting "Delete project".
+
+  The steps below also applies to deleting a Data Science project in the OpenShift AI.
+  
   After the action, the namespace stays with a "Terminating" status on the RedHat OpenShift console and doesn't go away.
   
   <img src="/images/namespace_in_terminating_state.png" alt="Namespace stuck in Terminating state"/>
@@ -72,6 +75,8 @@
   
   <b style='color:blue !important;'>Resources</b>
   Red Hat has also share an article on this topic
-  https://www.redhat.com/en/blog/openshift-terminating-state
-  
+  https://www.redhat.com/en/blog/openshift-terminating-state<br>
+
+  Moments later ...
+    Realised that I captured "Test1" as the namespace at the beginning of the screenshot but subsequenly used other namespaces as screenshots. In any case, the steps are correct.
 </pre>
