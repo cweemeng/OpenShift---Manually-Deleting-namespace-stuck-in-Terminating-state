@@ -1,6 +1,11 @@
 # OpenShift---Deleting-namespace-stuck-in-Terminating-state
 <pre>
-  You see a namespace with a "Terminating" status on the RedHat OpenShift console. Here are the steps you can take to manually delete the terminated namespace. 
+  You are deleting a namespace from the OpenShift Console using the Options menu at the far right side of the project listing, selecting "Delete project".
+  After the action, the namespace stays with a "Terminating" status on the RedHat OpenShift console and doesn't go away.
+  
+  ![image](https://github.com/user-attachments/assets/3f75600d-77df-4485-85e8-8f33a9808a62)
+
+  Here are the steps you can take to manually delete the terminated namespace. 
   
   Step 1
       View the namespaces that are stuck in the Terminating state:<br>
