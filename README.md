@@ -28,26 +28,33 @@
 
       Make sure you do not have any existing proxy process started. You can check this with the following command:
 
-          ps -ef | grep "oc proxy"
+          <b>ps -ef | grep "oc proxy"</b>
 
       It will show you the PID of the process, if it is there
 
       Then you can stop it with
-          kill -9 <pid>
+          <b>kill -9 <pid></b>
 
-          ![image](https://github.com/user-attachments/assets/4a6a0774-b4e0-4655-abd9-0e52f44b68fa)
+          ![image](https://github.com/user-attachments/assets/c7a5c6eed8beb447bde1e82024063314e6e88b93)
+            https://github.com/cweemeng/OpenShift---Deleting-namespace-stuck-in-Terminating-state/blob/c7a5c6eed8beb447bde1e82024063314e6e88b93/delete_oc_proxy.png
 
       Running the following command to start the temporary proxy process
-          oc proxy
+              <b>oc proxy</b>
 
       Your proxy IP and port might resemble the following output:
-         Starting to serve on 127.0.0.1:8001
+             Starting to serve on 127.0.0.1:8001
             
   Step 5
       Open a new terminal window, and make an API call with your temporary proxy IP and port:
-             curl -k -H "Content-Type: application/json" -X PUT --data-binary @tmp.json http://127.0.0.1:8001/api/v1/namespaces/"terminating-namespace"/finalize
-      
-  <b>Resources</b>
+             <b>curl -k -H "Content-Type: application/json" -X PUT --data-binary @tmp.json http://127.0.0.1:8001/api/v1/namespaces/"terminating-namespace"/finalize</b>
+
+  Step 6
+      Verify that the terminating namespace is removed with :
+              <b>oc get namespaces</b>
+           to see if the namespace is still there OR
+              <b>oc project "terminating namespace"</b>
+                
+  <b style='color:blue !important;'>Resources</b>
   Red Hat has also share an article on this topic
   https://www.redhat.com/en/blog/openshift-terminating-state
   
