@@ -1,0 +1,1 @@
+# OpenShift---Deleting-namespace-stuck-in-Terminating-state
