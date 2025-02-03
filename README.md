@@ -35,8 +35,7 @@
       Then you can stop it with
           <b>kill -9 <pid></b>
 
-          ![image](https://github.com/user-attachments/assets/c7a5c6eed8beb447bde1e82024063314e6e88b93)
-            https://github.com/cweemeng/OpenShift---Deleting-namespace-stuck-in-Terminating-state/blob/c7a5c6eed8beb447bde1e82024063314e6e88b93/delete_oc_proxy.png
+            ![alt text](http://url/to/delete_oc_proxy.png)
 
       Running the following command to start the temporary proxy process
               <b>oc proxy</b>
