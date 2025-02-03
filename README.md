@@ -21,6 +21,7 @@
   Step 3
        View the namespaces that are stuck in the Terminating state:<br>
             <b>oc get namespaces</b>
+            <img src="/images/namespaces_in_terminating_state.png" alt="Namespaces in terminating state"/><br>
 
   Step 4
       Copy the content of the terminating namespace into a temporary file
@@ -66,7 +67,9 @@
               <b>oc get namespaces</b>
            to see if the namespace is still there OR
               <b>oc project "terminating namespace"</b>
-                
+
+            <img src="/images/namespaces_cleared.png" alt="Namespaces cleared"/><br>
+  
   <b style='color:blue !important;'>Resources</b>
   Red Hat has also share an article on this topic
   https://www.redhat.com/en/blog/openshift-terminating-state
