@@ -11,19 +11,22 @@
       Open a terminal window. Make sure you have already installed the OpenShift CLI (oc) binary. 
   
   Step 2
-      Login to OpenShift cluster with the "Display Token" from the "Copy Login command" action found in the OpenShift Console, top, far right side
+      From the OpenShift Console, click the "Copy Login command" action found, at the top, far right side of the screen.
             <img src="/images/login_token.png" alt="Login Token"/><br>
+
+       It will open up to a new browser tab/window, showing "Display Token". Click on it and copy the credentials into the earlier terminal window. Credentials start with " oc login --...."
+  
             <img src="/images/display_token.png" alt="Display Token"/>
   
   Step 3
        View the namespaces that are stuck in the Terminating state:<br>
             <b>oc get namespaces</b>
 
-  Step 3
+  Step 4
       Copy the content of the terminating namespace into a temporary file
             <b>oc get namespace "terminating-namespace" -o json > tmp.json </b>
 
-  Step 3
+  Step 5
       Edit your tmp.json file. Remove the kubernetes value from the finalizers field and save the file.
 
             vi tmp.json
@@ -31,7 +34,7 @@
             Search for the keyword "finalizers" It should be under the section <b>spec:</b>b>
             Once found, remove the entire line and save the file.  
   
-  Step 4
+  Step 6
       You will need to start a temporary local proxy server to let the local server talk to the remote OpenShift cluster. 
 
       Make sure you do not have any existing proxy process started. You can check this with the following command:
@@ -51,14 +54,14 @@
       Your proxy IP and port might resemble the following output:
              Starting to serve on 127.0.0.1:8001
             
-  Step 5
+  Step 7
       Important ****
       Open a new terminal window. Make sure you login to the OpenShift cluster
   
       Make an API call with your temporary proxy IP and port:
              <b>curl -k -H "Content-Type: application/json" -X PUT --data-binary @tmp.json http://127.0.0.1:8001/api/v1/namespaces/"terminating-namespace"/finalize</b>
 
-  Step 6
+  Step 8
       Verify that the terminating namespace is removed with :
               <b>oc get namespaces</b>
            to see if the namespace is still there OR
